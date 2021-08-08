@@ -4,3 +4,5 @@ language = "zh-cn"
 multilingual = false
 src = "src"
 title = "LeetCode Solution - 力扣题解"
+[output.html]
+mathjax-support = true
