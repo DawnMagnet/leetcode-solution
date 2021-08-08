@@ -1,6 +1,6 @@
 [book]
 authors = ["DawnMagnet"]
-language = "en"
+language = "zh-cn"
 multilingual = false
 src = "src"
-title = "LeetCode Solution"
+title = "LeetCode Solution - 力扣题解"
