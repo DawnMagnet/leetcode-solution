@@ -50,3 +50,17 @@ impl Solution {
     }
 }
 ```
+# 运行效果
+```rust,editable
+# pub fn tribonacci(n: i32) -> i32 {
+#    let n = n as usize;
+#    let mut v = vec![0, 1, 1];
+#    let mut cur_len = 3;
+#    while cur_len <= n {
+#        v.push(v[cur_len - 1] + v[cur_len - 2] + v[cur_len - 3]);
+#        cur_len += 1;
+#    }
+#    v[n]
+# }
+println!("{:?}", tribonacci(2));
+```
