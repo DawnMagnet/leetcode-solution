@@ -1,0 +1,6 @@
+[book]
+authors = ["DawnMagnet"]
+language = "en"
+multilingual = false
+src = "src"
+title = "LeetCode Solution"
