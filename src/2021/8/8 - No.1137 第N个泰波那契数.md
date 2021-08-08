@@ -36,6 +36,7 @@ T_4 = 1 + 1 + 2 = 4
 也就是我们新建一个数组，里面有固定的三项`[0,1,1]`。这是题目中给我们的条件，然后我们根据给入的n去计算到我们需要的地方，就可以获得第 N 个泰波那契数了
 # Rust代码
 ```rust
+# struct Solution;
 impl Solution {
     pub fn tribonacci(n: i32) -> i32 {
         let n = n as usize;
