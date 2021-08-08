@@ -52,6 +52,7 @@ impl Solution {
 ```
 # 运行效果
 ```rust,editable
+# fn main() {
 # pub fn tribonacci(n: i32) -> i32 {
 #    let n = n as usize;
 #    let mut v = vec![0, 1, 1];
@@ -63,4 +64,5 @@ impl Solution {
 #    v[n]
 # }
 println!("{:?}", tribonacci(2));
+# }
 ```
