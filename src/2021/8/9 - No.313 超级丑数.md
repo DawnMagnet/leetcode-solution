@@ -9,7 +9,7 @@
 
 <p><strong>示例 1：</strong></p>
 
-<pre><strong>输入：</strong>n = 12, <code>primes</code> = <code>[2,7,13,19]</code>
+<pre><strong>输入：</strong>n = 12, <code>primes = [2,7,13,19]</code>
 <strong>输出：</strong>32 
 <strong>解释：</strong>给定长度为 4 的质数数组 primes = [2,7,13,19]，前 12 个超级丑数序列为：[1,2,4,7,8,13,14,16,19,26,28,32] 。</pre>
 
