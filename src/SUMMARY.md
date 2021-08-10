@@ -1,5 +1,6 @@
 # Summary
 
+[关于从蚂蚁笔记迁移而来的说明](./leanote.md)
 [引言](./written_at_front.md)
 - [2021年](./2021/SUMMARY.md)
   - [8月](./2021/8/SUMMARY.md)
