@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-import glob, sys, os
+import glob
 from collections import defaultdict
 md_list = []
 for file_name in glob.glob("src/*/*/*.md"):
