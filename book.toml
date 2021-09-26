@@ -5,6 +5,7 @@ multilingual = false
 src = "src"
 title = "LeetCode Solution - 力扣题解"
 [output.html]
+default-theme = "Rust"
 mathjax-support = true
 git-repository-url = "https://github.com/DawnMagnet/leetcode-solution.git"
 git-repository-icon = "fa-github"
