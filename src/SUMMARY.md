@@ -3,7 +3,7 @@
 [引言](./written_at_front.md)
 [关于从蚂蚁笔记迁移而来的说明](./leanote.md)
 - [特辑](./special/SUMMAR.md)
-    - [2021力扣杯秋季编程大赛-战队赛复盘](./special/leetcode-cup-2021秋战队赛.md)
+    - [2021力扣杯秋季编程大赛-战队赛复盘](./special/leetcode-cup-2021-autumn-group.md)
 - [2021年](./2021/SUMMARY.md)
     - [9月](./2021/9/SUMMARY.md)
         - [29日 -  超级洗衣机](./2021/9/29-No.517.md)
