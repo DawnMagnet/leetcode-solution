@@ -223,13 +223,13 @@ public:
 在具体代码中，设置两个数组 `x_param` 和 `c_param` ，分别代表指定场馆一次函数中的 x 系数项和常数项。最终递推回第一步，求得 `x_param_sum` 与 `c_param_sum` 。求解 x 的方程为:
 
 $$
-\sum^{n}_{i=1}{x\_param[i]} * x + \sum^{n}_{i=1}{c\_param[i]} = totalNum
+\sum^{n}_{i=1}{x_{param}[i]} * x + \sum^{n}_{i=1}{c_{param}[i]} = totalNum
 $$
 
 简单变换后得到:
 
 $$
-x = \frac{(totalNum - \sum^{n}_{i=1}{c\_param[i]})}{\sum^{n}_{i=1}{x\_param[i]}}
+x = \frac{(totalNum - \sum^{n}_{i=1}{c_{param}[i]})}{\sum^{n}_{i=1}{x_{param}[i]}}
 $$
 
 最后代入到表达式中即可完成计算。
