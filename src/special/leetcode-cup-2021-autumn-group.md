@@ -222,15 +222,10 @@ public:
 
 在具体代码中，设置两个数组 `x_param` 和 `c_param` ，分别代表指定场馆一次函数中的 x 系数项和常数项。最终递推回第一步，求得 `x_param_sum` 与 `c_param_sum` 。求解 x 的方程为:
 
-$$
-\sum^{n}_{i=1}{x_{param}[i]} * x + \sum^{n}_{i=1}{c_{param}[i]} = totalNum
-$$
-
+$\sum^{n}_{i=1}{x_{param}[i]} * x + \sum^{n}_{i=1}{c_{param}[i]} = totalNum$  
 简单变换后得到:
 
-$$
-x = \frac{(totalNum - \sum^{n}_{i=1}{c_{param}[i]})}{\sum^{n}_{i=1}{x_{param}[i]}}
-$$
+$x = \frac{(totalNum - \sum^{n}_{i=1}{c_{param}[i]})}{\sum^{n}_{i=1}{x_{param}[i]}}$
 
 最后代入到表达式中即可完成计算。
 
@@ -284,6 +279,99 @@ public:
         for (int i = 0; i < n; ++i)
             res[i] = x_param[i] * x + c_param[i];
         return res;
+    }
+};
+```
+
+## [第四题 入场安检](https://leetcode-cn.com/problems/oPs9Bm/)
+
+### 4.1 题目
+
+<div class="css-330z23" style="padding: 0px; margin: 13px 0px;"><p>「力扣挑战赛」 的入场仪式马上就要开始了，由于安保工作的需要，设置了可容纳人数总和为 <code>M</code> 的 <code>N</code> 个安检室，<code>capacities[i]</code> 记录第 <code>i</code> 个安检室可容纳人数。安检室拥有两种类型：</p>
+<ul>
+<li>先进先出：在安检室中的所有观众中，最早进入安检室的观众最先离开</li>
+<li>后进先出：在安检室中的所有观众中，最晚进入安检室的观众最先离开</li>
+</ul>
+<p align="center"><img src="https://pic.leetcode-cn.com/1628843202-cdFPSt-c24754f1a5ff56989340ba5004dc5eda.gif" alt="c24754f1a5ff56989340ba5004dc5eda.gif"></p>
+<p>恰好 <code>M+1</code> 位入场的观众（编号从 0 开始）需要排队<strong>依次</strong>入场安检， 入场安检的规则如下：</p>
+<ul>
+<li>观众需要先进入编号 <code>0</code> 的安检室</li>
+<li>当观众将进入编号 <code>i</code> 的安检室时（<code>0 &lt;= i &lt; N</code>)，
+<ul>
+<li>若安检室未到达可容纳人数上限，该观众可直接进入；</li>
+<li>若安检室已到达可容纳人数上限，在该观众进入安检室之前需根据当前安检室类型选择一位观众离开后才能进入；</li>
+</ul>
+</li>
+<li>当观众离开编号 <code>i</code> 的安检室时 （<code>0 &lt;= i &lt; N-1</code>)，将进入编号 <code>i+1</code> 的安检室接受安检。</li>
+</ul>
+<p>若可以任意设定每个安检室的类型，请问有多少种设定安检室类型的方案可以使得编号 <code>k</code> 的观众第一个通过最后一个安检室入场。</p>
+<p><strong>注意：</strong></p>
+<ul>
+<li>观众不可主动离开安检室，只有当安检室容纳人数达到上限，且又有新观众需要进入时，才可根据安检室的类型选择一位观众离开；</li>
+<li>由于方案数可能过大，请将答案对 <code>1000000007</code> 取模后返回。</li>
+</ul>
+<p><strong>示例 1：</strong></p>
+<blockquote>
+<p>输入：<code>capacities = [2,2,3], k = 2</code></p>
+<p>输出：<code>2</code><br>
+解释：<br>
+存在两种设定的 <code>2</code> 种方案：</p>
+<ul>
+<li>方案 1：将编号为 <code>0</code> 、<code>1</code> 的实验室设置为 <strong>后进先出</strong> 的类型，编号为 <code>2</code> 的实验室设置为 <strong>先进先出</strong> 的类型；</li>
+<li>方案 2：将编号为 <code>0</code> 、<code>1</code> 的实验室设置为 <strong>先进先出</strong> 的类型，编号为 <code>2</code> 的实验室设置为 <strong>后进先出</strong> 的类型。</li>
+</ul>
+<p>以下是方案 1 的示意图：<br>
+<img src="https://pic.leetcode-cn.com/1628841618-bFKsnt-c60e38199a225ad62f13b954872edf9b.gif" alt="c60e38199a225ad62f13b954872edf9b.gif"></p>
+</blockquote>
+<p><strong>示例 2：</strong></p>
+<blockquote>
+<p>输入：<code>capacities = [3,3], k = 3</code></p>
+<p>输出：<code>0</code></p>
+</blockquote>
+<p><strong>示例 3：</strong></p>
+<blockquote>
+<p>输入：<code>capacities = [4,3,2,2], k = 6</code></p>
+<p>输出：<code>2</code></p>
+</blockquote>
+<p><strong>提示:</strong></p>
+<ul>
+<li><code>1 &lt;= capacities.length &lt;= 200</code></li>
+<li><code>1 &lt;= capacities[i] &lt;= 200</code></li>
+<li><code>0 &lt;= k &lt;= sum(capacities)</code></li>
+</ul>
+</div>
+
+### 4.2 思路分析
+
+本题注意观察题目即可发现，先进先出对应的数据结构为队列，后进先出对应的数据结构为栈。
+而注意看第二个gif，我们发现，当一个容器（实验室，我们在此统称为容器）为队列时，第一个进入的第一个出队列，也就是说，一个队列对于改变流程中的第一个人没任何影响。对比着来看栈，我们发现，一个长度为2的栈必须先填充1个元素，这一个元素就相当于固定在此处，没法移动，也就是说，对于流程中的第一个人，一个长度为`c`的栈能够拦截`c-1`个人。
+
+那么就很简单了。因为我们想要让第`k`个人达到对首，我们必须使用栈来拦截前`k`个人。
+
+所以我们把这道题翻译成一个我们喜闻乐见的形式：
+```markdown
+有`N`个硬币，每个的金额都在`cap`数组中给出（需要一个减1操作）。我们从前往后选，求最终金额为`k`的方案数。
+```
+是不是一下就简单了呢！
+
+最终的做法就是一个非常简单的dp。因为一个硬币只能用一次，所以要控制dp的方向。
+
+### 4.3 C++代码
+```cpp
+const int md = 1000000007;
+class Solution {
+public:
+    int securityCheck(vector<int>& cap, int k) {
+        for (auto & c : cap) c--;
+        int sum = accumulate(cap.begin(), cap.end(), 0);
+        if (sum < k) return 0;
+        int dp[40005] = {1};
+        for (auto & c : cap) {
+            for (int i = k - c; i >= 0; --i) {
+                (dp[i + c] += dp[i]) %= md;
+            }
+        }
+        return dp[k];
     }
 };
 ```
