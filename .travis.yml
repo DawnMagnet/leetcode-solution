@@ -15,7 +15,7 @@ before_script:
 
 script:
     - mdbook build && mdbook test
-    - sed -i '$a \nvar _hmt = _hmt || [];\n(function() {var hm = document.createElement("script");hm.src = "https://hm.baidu.com/hm.js?68e5a42781c7cf226eb26bac2cf1a765"\;var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(hm, s);})();' book/book.js
+    - ./record.sh
 deploy:
     provider: pages
     skip-cleanup: true
