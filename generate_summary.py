@@ -1,9 +1,11 @@
 #!/usr/bin/env python3
-import glob, os
+import glob
 from collections import defaultdict
+from typing import Callable
+
 md_list = []
 for file_name in glob.glob("src/*/*/*.md"):
-    if not "SUMMARY" in file_name:
+    if "SUMMARY" not in file_name:
         md_list.append(file_name)
 
 md_dict = defaultdict(lambda: defaultdict(list))
@@ -11,9 +13,9 @@ for item in md_list:
     per = item.split('/')[1:]
     assert len(per) == 3
     md_dict[int(per[0])][int(per[1])].append(per[2])
-md_dict = {t:dict(md_dict[t]) for t in md_dict}
+md_dict = {t: dict(md_dict[t]) for t in md_dict}
 res = ""
-create_or_clean = lambda path : open("./src/" + path, 'w').close()
+create_or_clean: Callable[[str], None] = lambda path: open("./src/" + path, 'w').close()
 for year in sorted(md_dict.keys(), reverse=True):
     res += f'- [{year}年](./{year}/SUMMARY.md)\n'
     create_or_clean(f'./{year}/SUMMARY.md')
