@@ -50,30 +50,36 @@
 
 # 思路分析
 
-待补充
+这道题本质上就是要让我们用除法的思维去做题。  
+在我们做除法的时候，怎么判断重复循环的小数呢？
 
+首先当然是进行预处理。包括以下几个步骤。
+
+1. 处理符号，将负号统一处理一下。因为两个正数相除显然比较符合人类的习惯。
+2. 将所有32位数字输入处理成64位，因为可能会超限。
+3. 处理整数部分，因为整数部分一般不参与到循环小数的范围内。
+4. 其他特殊情况。
+
+
+在处理完上述步骤之后，我们得到了还是题目中的两个数字`numerator`和`denominator`。这两个数字仍然是被除数与除数的关系，只不过经过减去整数部分的处理之后，我们能确保`numerator`一定小于`denominator`。
+![小学课本对于循环小数的讲解](3-No.166.png)
+
+如果没有思路可以看一下上面这张图。这张图基本上概括了本题所需的循环小数部分的数学知识。
+可以看出，在除法的过程中，遇到除不尽的数字，我们一般是采用余数的方式，并且继续拿余数乘10之后再除。可以确定的是，只有在余数出现相同的情况下，余数之后的情况也会一模一样，也就是说，第一次出现相同的余数就是循环节的位置。
+
+在此处，我们使用一个哈希表来存之前出现过的所有余数，并且在第二次出现余数的时候，标注循环节的位置，结束程序。
 # Rust代码
 ```rust
 # struct Solution;
 use std::collections::HashMap;
-pub fn gcd(a: i64, b: i64) -> i64 {
-    return if a % b == 0 {
-        b
-    } else {
-        gcd(b, a % b)
-    }
-}
 impl Solution {
     pub fn fraction_to_decimal(numerator: i32, denominator: i32) -> String {
         let mut ret = String::new();
         if (numerator as i64 * denominator as i64) < 0 {
             ret.push('-');
         }
-        let denominator = (denominator as i64).abs();
-        let numerator = (numerator as i64).abs();
-        let g = gcd(numerator, denominator);
-        let mut denominator = denominator / g;
-        let mut numerator = numerator / g;
+        let mut denominator = (denominator as i64).abs();
+        let mut numerator = (numerator as i64).abs();
         let pre = numerator / denominator;
         numerator %= denominator;
         let mut map: HashMap<i64, i32> = HashMap::new();
