@@ -1,0 +1,522 @@
+<!DOCTYPE HTML>
+<html lang="zh-cn" class="sidebar-visible no-js rust">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>2021力扣杯秋季编程大赛-战队赛复盘 - LeetCode Solution - 力扣题解</title>
+        <!-- Custom HTML head -->
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="../favicon.svg">
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <!-- MathJax -->
+        <script async type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    </head>
+    <body>
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?68e5a42781c7cf226eb26bac2cf1a765";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "rust";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('rust')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../written_at_front.html">引言</a></li><li class="chapter-item expanded affix "><a href="../leanote.html">关于从蚂蚁笔记迁移而来的说明</a></li><li class="chapter-item expanded "><a href="../special/SUMMAR.html"><strong aria-hidden="true">1.</strong> 特辑</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../special/leetcode-cup-2021-autumn-group.html" class="active"><strong aria-hidden="true">1.1.</strong> 2021力扣杯秋季编程大赛-战队赛复盘</a></li></ol></li><li class="chapter-item expanded "><a href="../2021/SUMMARY.html"><strong aria-hidden="true">2.</strong> 2021年</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../2021/10/SUMMARY.html"><strong aria-hidden="true">2.1.</strong> 10月</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../2021/10/7-No.434.html"><strong aria-hidden="true">2.1.1.</strong> 7日 -  字符串中的单词数</a></li><li class="chapter-item expanded "><a href="../2021/10/6-No.414.html"><strong aria-hidden="true">2.1.2.</strong> 6日 -  第三大的数</a></li><li class="chapter-item expanded "><a href="../2021/10/5-No.284.html"><strong aria-hidden="true">2.1.3.</strong> 5日 -  窥探迭代器</a></li><li class="chapter-item expanded "><a href="../2021/10/4-No.482.html"><strong aria-hidden="true">2.1.4.</strong> 4日 -  密钥格式化</a></li><li class="chapter-item expanded "><a href="../2021/10/3-No.166.html"><strong aria-hidden="true">2.1.5.</strong> 3日 -  分数到小数</a></li><li class="chapter-item expanded "><a href="../2021/10/2-No.405.html"><strong aria-hidden="true">2.1.6.</strong> 2日 -  数字转换为十六进制数</a></li><li class="chapter-item expanded "><a href="../2021/10/1-No.1436.html"><strong aria-hidden="true">2.1.7.</strong> 1日 -  旅行终点站</a></li></ol></li><li class="chapter-item expanded "><a href="../2021/9/SUMMARY.html"><strong aria-hidden="true">2.2.</strong> 9月</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../2021/9/30-No.223.html"><strong aria-hidden="true">2.2.1.</strong> 30日 -  矩形面积</a></li><li class="chapter-item expanded "><a href="../2021/9/29-No.517.html"><strong aria-hidden="true">2.2.2.</strong> 29日 -  超级洗衣机</a></li><li class="chapter-item expanded "><a href="../2021/9/28-No.437.html"><strong aria-hidden="true">2.2.3.</strong> 28日 -  路径总和 III</a></li><li class="chapter-item expanded "><a href="../2021/9/27-No.639.html"><strong aria-hidden="true">2.2.4.</strong> 27日 -  解码方法 II</a></li><li class="chapter-item expanded "><a href="../2021/9/26-No.371.html"><strong aria-hidden="true">2.2.5.</strong> 26日 -  两整数之和</a></li><li class="chapter-item expanded "><a href="../2021/9/25-No.583.html"><strong aria-hidden="true">2.2.6.</strong> 25日 -  两个字符串的删除操作</a></li><li class="chapter-item expanded "><a href="../2021/9/24-No.430.html"><strong aria-hidden="true">2.2.7.</strong> 24日 -  扁平化多级双向链表</a></li><li class="chapter-item expanded "><a href="../2021/9/23-No.326.html"><strong aria-hidden="true">2.2.8.</strong> 23日 -  3的幂</a></li><li class="chapter-item expanded "><a href="../2021/9/22-No.725.html"><strong aria-hidden="true">2.2.9.</strong> 22日 -  分隔链表</a></li></ol></li><li class="chapter-item expanded "><a href="../2021/8/SUMMARY.html"><strong aria-hidden="true">2.3.</strong> 8月</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../2021/8/14-No.1853.html"><strong aria-hidden="true">2.3.1.</strong> 14日 -  统计不开心的朋友</a></li><li class="chapter-item expanded "><a href="../2021/8/13-No.233.html"><strong aria-hidden="true">2.3.2.</strong> 13日 -  数字1的个数</a></li><li class="chapter-item expanded "><a href="../2021/8/12-No.516.html"><strong aria-hidden="true">2.3.3.</strong> 12日 -  最长回文子序列</a></li><li class="chapter-item expanded "><a href="../2021/8/11-No.446.html"><strong aria-hidden="true">2.3.4.</strong> 11日 -  等差数列划分 II - 子序列</a></li><li class="chapter-item expanded "><a href="../2021/8/10-No.413.html"><strong aria-hidden="true">2.3.5.</strong> 10日 -  等差数列划分</a></li><li class="chapter-item expanded "><a href="../2021/8/9-No.313.html"><strong aria-hidden="true">2.3.6.</strong> 9日 -  超级丑数</a></li><li class="chapter-item expanded "><a href="../2021/8/8-No.1137.html"><strong aria-hidden="true">2.3.7.</strong> 8日 -  第N个泰波那契数</a></li></ol></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">LeetCode Solution - 力扣题解</h1>
+
+                    <div class="right-buttons">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        <a href="https://github.com/DawnMagnet/leetcode-solution.git" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css" integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
+<h1 id="2021-秋季力扣杯---战队赛复盘"><a class="header" href="#2021-秋季力扣杯---战队赛复盘">2021 秋季力扣杯 - 战队赛复盘</a></h1>
+<h2 id="写在前面"><a class="header" href="#写在前面">写在前面</a></h2>
+<p><img src="./leetcode-cup-2021%E7%A7%8B%E6%88%98%E9%98%9F%E8%B5%9B.png" alt="" />
+<img src="./leetcode-cup-2021%E7%A7%8B%E6%88%98%E9%98%9F%E8%B5%9B-1.png" alt="" />
+今年发挥还算挺不错的。以后再接再励！<br />
+我 30 分钟写完了 2、4 两道题，队友一小时多写完了 1、3 两道题，然后就是啥都不会的几个小时。。。</p>
+<p>争取以后不会出现这种情况。</p>
+<h2 id="a-hrefhttpsleetcode-cncomproblemssz59z6第一题-开幕式焰火a"><a class="header" href="#a-hrefhttpsleetcode-cncomproblemssz59z6第一题-开幕式焰火a"><a href="https://leetcode-cn.com/problems/sZ59z6/">第一题 开幕式焰火</a></a></h2>
+<h3 id="11-题目"><a class="header" href="#11-题目">1.1 题目</a></h3>
+<div class="css-330z23" style="padding: 0px; margin: 13px 0px;"><p>「力扣挑战赛」开幕式开始了，空中绽放了一颗二叉树形的巨型焰火。<br>
+给定一棵二叉树 <code>root</code> 代表焰火，节点值表示巨型焰火这一位置的颜色种类。请帮小扣计算巨型焰火有多少种不同的颜色。</p>
+<p><strong>示例 1：</strong></p>
+<blockquote>
+<p>输入：<code>root = [1,3,2,1,null,2]</code></p>
+<p>输出：<code>3</code></p>
+<p>解释：焰火中有 3 个不同的颜色，值分别为 1、2、3</p>
+</blockquote>
+<p><strong>示例 2：</strong></p>
+<blockquote>
+<p>输入：<code>root = [3,3,3]</code></p>
+<p>输出：<code>1</code></p>
+<p>解释：焰火中仅出现 1 个颜色，值为 3</p>
+</blockquote>
+<p><strong>提示：</strong></p>
+<ul>
+<li><code>1 &lt;= 节点个数 &lt;= 1000</code></li>
+<li><code>1 &lt;= Node.val &lt;= 1000</code></li>
+</ul>
+</div>
+<h3 id="12-思路分析"><a class="header" href="#12-思路分析">1.2 思路分析</a></h3>
+<p>数组 dp 存一下状态就行了，没有出现过就加一次。</p>
+<h3 id="13-代码"><a class="header" href="#13-代码">1.3 代码</a></h3>
+<pre><code class="language-cpp">/**
+ * Definition for a binary tree node.
+ * struct TreeNode {
+ *     int val;
+ *     TreeNode *left;
+ *     TreeNode *right;
+ *     TreeNode(int x) : val(x), left(NULL), right(NULL) {}
+ * };
+ */
+class Solution {
+public:
+    bool dp[1005];
+    int count = 0;
+    void deal(TreeNode * root) {
+        if (!root) return ;
+        if (!dp[root-&gt;val]) {
+            count++;
+            dp[root-&gt;val] = true;
+        }
+        deal(root-&gt;left);
+        deal(root-&gt;right);
+    }
+    int numColor(TreeNode* root) {
+        deal(root);
+        return count;
+    }
+};
+</code></pre>
+<h2 id="a-hrefhttpsleetcode-cncomproblemskplevh第二题-自行车炫技赛场a"><a class="header" href="#a-hrefhttpsleetcode-cncomproblemskplevh第二题-自行车炫技赛场a"><a href="https://leetcode-cn.com/problems/kplEvH/">第二题 自行车炫技赛场</a></a></h2>
+<h3 id="21-题目"><a class="header" href="#21-题目">2.1 题目</a></h3>
+<div class="css-330z23" style="padding: 0px; margin: 13px 0px;"><p>「力扣挑战赛」中 <code>N*M</code> 大小的自行车炫技赛场的场地由一片连绵起伏的上下坡组成，场地的高度值记录于二维数组 <code>terrain</code> 中，场地的减速值记录于二维数组 <code>obstacle</code> 中。</p>
+<ul>
+<li>若选手骑着自行车从高度为 <code>h1</code> 且减速值为 <code>o1</code> 的位置到高度为 <code>h2</code> 且减速值为 <code>o2</code> 的相邻位置（上下左右四个方向），速度变化值为 <code>h1-h2-o2</code>（负值减速，正值增速）。</li>
+</ul>
+<p>选手初始位于坐标 <code>position</code> 处且初始速度为 1，请问选手可以刚好到其他哪些位置时速度依旧为 1。请以二维数组形式返回这些位置。若有多个位置则按行坐标升序排列，若有多个位置行坐标相同则按列坐标升序排列。</p>
+<p><strong>注意：</strong> 骑行过程中速度不能为零或负值</p>
+<p><strong>示例 1：</strong></p>
+<blockquote>
+<p>输入：<code>position = [0,0], terrain = [[0,0],[0,0]], obstacle = [[0,0],[0,0]]</code></p>
+<p>输出：<code>[[0,1],[1,0],[1,1]]</code></p>
+<p>解释：<br>
+由于当前场地属于平地，根据上面的规则，选手从<code>[0,0]</code>的位置出发都能刚好在其他处的位置速度为 1。</p>
+</blockquote>
+<p><strong>示例 2：</strong></p>
+<blockquote>
+<p>输入：<code>position = [1,1], terrain = [[5,0],[0,6]], obstacle = [[0,6],[7,0]]</code></p>
+<p>输出：<code>[[0,1]]</code></p>
+<p>解释：<br>
+选手从 <code>[1,1]</code> 处的位置出发，到 <code>[0,1]</code> 处的位置时恰好速度为 1。</p>
+</blockquote>
+<p><strong>提示：</strong></p>
+<ul>
+<li><code>n == terrain.length == obstacle.length</code></li>
+<li><code>m == terrain[i].length == obstacle[i].length</code></li>
+<li><code>1 &lt;= n &lt;= 100</code></li>
+<li><code>1 &lt;= m &lt;= 100</code></li>
+<li><code>0 &lt;= terrain[i][j], obstacle[i][j] &lt;= 100</code></li>
+<li><code>position.length == 2</code></li>
+<li><code>0 &lt;= position[0] &lt; n</code></li>
+<li><code>0 &lt;= position[1] &lt; m</code></li>
+</ul>
+</div>
+<h3 id="22-思路分析"><a class="header" href="#22-思路分析">2.2 思路分析</a></h3>
+<p>这道题是一个比较基础的 dfs 思路。
+可能会要使用记忆化的技术去重。
+仔细读题后发现，自行车到达一个地方，并非一定会有相同的速度，也就是说，不同的路径到达一个地方，速度可能并不相同。
+在这种情况下，我们必须得记录一下，如果两次到达同一个地方，具有相同的速度，我们就可以考虑不再继续。如果不去判断这一点，就会导致循环的出现，也就是示例 1 中出现的情况，如果我们不判断重复，一定会导致死循环。</p>
+<p>所以总结一下，思路就是 dfs 加上记忆化去重（剪枝）。只有两次到达同一个地方并且具有相同的速度，才会是剪枝条件。</p>
+<p>我的代码中主要分成了两块，一块是主函数，一块是 dfs，dfs 函数接受三个参数，也就是当前的 x，y 坐标和 speed 速度。
+当<code>passed[x][y][speed]</code>为<code>true</code>时候，就说明之前以相同的速度遍历过相同的地方，而且无需再遍历一次。<code>res[x][y]</code>为<code>true</code>的时候说明该坐标是答案的一个候选坐标。接下来就是非常常规的往四个方向进行遍历。速度小于 0 就截断之类的基操。</p>
+<p>主函数中主要是处理了一下输入输出的逻辑，存了一些全局变量，对输出的答案格式做了一个简单的操作，包括将 res 变成答案所需的形式。</p>
+<h3 id="23-c代码"><a class="header" href="#23-c代码">2.3 C++代码</a></h3>
+<pre><code class="language-cpp">using VI = vector&lt;int&gt;;
+using VVI = vector&lt;VI&gt;;
+const VI direc = {0, 1, 0, -1, 0};
+class Solution {
+public:
+    VVI t, o;
+    bool res[100][100] = {};
+    bool passed[100][100][105] = {};
+    int n, m;
+    void dfs(int x, int y, int speed) {
+        if (speed == 1) res[x][y] = true;
+        if (speed &lt; 1) return;
+        if (passed[x][y][speed]) {
+            return;
+        }
+        passed[x][y][speed] = true;
+        for (int i = 0; i &lt; 4; ++i) {
+            int xt = x + direc[i];
+            int yt = y + direc[i + 1];
+            if (xt &gt;= 0 &amp;&amp; yt &gt;= 0 &amp;&amp; xt &lt; n &amp;&amp; yt &lt; m)
+                dfs(xt, yt, speed + t[x][y] - t[xt][yt] - o[xt][yt]);
+        }
+    }
+    VVI bicycleYard(VI&amp; p, VVI&amp; terrain, VVI&amp; obstacle) {
+        t = terrain;
+        o = obstacle;
+        n = t.size();
+        m = t[0].size();
+        int x = p[0], y = p[1];
+        dfs(x, y, 1);
+        VVI res_v;
+        res[x][y] = false;
+        for (int i = 0; i &lt; 100; ++i)
+            for (int j = 0; j &lt; 100; ++j)
+                if (res[i][j])
+                    res_v.push_back({i, j});
+        return res_v;
+    }
+};
+</code></pre>
+<h2 id="a-hrefhttpsleetcode-cncomproblems05zedj第三题-志愿者调配a"><a class="header" href="#a-hrefhttpsleetcode-cncomproblems05zedj第三题-志愿者调配a"><a href="https://leetcode-cn.com/problems/05ZEDJ/">第三题 志愿者调配</a></a></h2>
+<h3 id="31-题目"><a class="header" href="#31-题目">3.1 题目</a></h3>
+<div class="css-330z23" style="padding: 0px; margin: 13px 0px;"><p>「力扣挑战赛」有 <code>n</code> 个比赛场馆（场馆编号从 <code>0</code> 开始），场馆之间的通道分布情况记录于二维数组 <code>edges</code> 中，<code>edges[i]= [x, y]</code> 表示第 <code>i</code> 条通道连接场馆 <code>x</code> 和场馆 <code>y</code>(即两个场馆相邻)。初始每个场馆中都有一定人数的志愿者（不同场馆人数可能不同），后续 <code>m</code> 天每天均会根据赛事热度进行志愿者人数调配。调配方案分为如下三种：</p>
+<ol>
+<li>将编号为 <code>idx</code> 的场馆内的志愿者人数减半；</li>
+<li>将编号为 <code>idx</code> 的场馆相邻的场馆的志愿者人数都加上编号为 <code>idx</code> 的场馆的志愿者人数；</li>
+<li>将编号为 <code>idx</code> 的场馆相邻的场馆的志愿者人数都减去编号为 <code>idx</code> 的场馆的志愿者人数。</li>
+</ol>
+<p>所有的调配信息记录于数组 <code>plans</code> 中，<code>plans[i] = [num,idx]</code> 表示第 <code>i</code> 天对编号 <code>idx</code> 的场馆执行了第 <code>num</code> 种调配方案。<br>
+在比赛结束后对调配方案进行复盘时，不慎将第 <code>0</code> 个场馆的<strong>最终</strong>志愿者人数丢失，只保留了<strong>初始</strong>所有场馆的志愿者总人数 <code>totalNum</code> ，以及记录了第 <code>1 ~ n-1</code> 个场馆的<strong>最终</strong>志愿者人数的一维数组 <code>finalCnt</code>。请你根据现有的信息求出初始每个场馆的志愿者人数，并按场馆编号顺序返回志愿者人数列表。</p>
+<p><strong>注意：</strong></p>
+<ul>
+<li>测试数据保证当某场馆进行第一种调配时，该场馆的志愿者人数一定为偶数；</li>
+<li>测试数据保证当某场馆进行第三种调配时，该场馆的相邻场馆志愿者人数不为负数；</li>
+<li>测试数据保证比赛开始时每个场馆的志愿者人数都不超过 <code>10^9</code>；</li>
+<li>测试数据保证给定的场馆间的道路分布情况中不会出现自环、重边的情况。</li>
+</ul>
+<p><strong>示例 1：</strong></p>
+<blockquote>
+<p><img src="./leetcode-cup-1.png" alt="image.png" onerror="this.src='data:image/svg+xml,%3Csvg height=\'150\' viewBox=\'0 0 150 150\' width=\'150\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cpath d=\'m2465 2286.42347-18.95363-18.92555-50.0112 43.79935-24.62708-24.5906-33.41155 24.5906-22.99654-17.22567v-73.0716c0-2.20914 1.79086-4 4-4h142c2.20914 0 4 1.79086 4 4zm-122-25.59081c5.52285 0 10-4.47052 10-9.98518 0-5.51467-4.47715-9.98519-10-9.98519s-10 4.47052-10 9.98519c0 5.51466 4.47715 9.98518 10 9.98518zm122 40.89296v61.27438c0 2.20914-1.79086 4-4 4h-142c-2.20914 0-4-1.79086-4-4v-53.62625l22.99654 17.22567 33.41155-24.5906 24.62708 24.5906 50.0112-43.79935z\' fill=\'%23eee\' fill-rule=\'evenodd\' transform=\'translate(-2315 -2217)\'/%3E%3C/svg%3E'; "><br>
+输入：<br>
+<code>finalCnt = [1,16], totalNum = 21, edges = [[0,1],[1,2]], plans = [[2,1],[1,0],[3,0]]</code></p>
+<p>输出：<code>[5,7,9]</code></p>
+<p>解释：<br>
+<img src="./leetcode-cup-2.png" alt="image.png" height="200" onerror="this.src='data:image/svg+xml,%3Csvg height=\'150\' viewBox=\'0 0 150 150\' width=\'150\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cpath d=\'m2465 2286.42347-18.95363-18.92555-50.0112 43.79935-24.62708-24.5906-33.41155 24.5906-22.99654-17.22567v-73.0716c0-2.20914 1.79086-4 4-4h142c2.20914 0 4 1.79086 4 4zm-122-25.59081c5.52285 0 10-4.47052 10-9.98518 0-5.51467-4.47715-9.98519-10-9.98519s-10 4.47052-10 9.98519c0 5.51466 4.47715 9.98518 10 9.98518zm122 40.89296v61.27438c0 2.20914-1.79086 4-4 4h-142c-2.20914 0-4-1.79086-4-4v-53.62625l22.99654 17.22567 33.41155-24.5906 24.62708 24.5906 50.0112-43.79935z\' fill=\'%23eee\' fill-rule=\'evenodd\' transform=\'translate(-2315 -2217)\'/%3E%3C/svg%3E'; "></p>
+</blockquote>
+<p><strong>示例 2 ：</strong></p>
+<blockquote>
+<p>输入：<br>
+<code>finalCnt = [4,13,4,3,8], totalNum = 54, edges = [[0,3],[1,3],[4,3],[2,3],[2,5]], plans = [[1,1],[3,3],[2,5],[1,0]]</code></p>
+<p>输出：<code>[10,16,9,4,7,8]</code></p>
+</blockquote>
+<p><strong>提示：</strong></p>
+<ul>
+<li><code>2 &lt;= n &lt;= 5*10^4</code></li>
+<li><code>1 &lt;= edges.length &lt;= min((n * (n - 1)) / 2, 5*10^4)</code></li>
+<li><code>0 &lt;= edges[i][0], edges[i][1] &lt; n</code></li>
+<li><code>1 &lt;= plans.length &lt;= 10</code></li>
+<li><code>1 &lt;= plans[i][0] &lt;=3</code></li>
+<li><code>0 &lt;= plans[i][1] &lt; n</code></li>
+<li><code>finalCnt.length = n-1</code></li>
+<li><code>0 &lt;= finalCnt[i] &lt; 10^9</code></li>
+<li><code>0 &lt;= totalNum &lt; 5*10^13</code></li>
+</ul>
+</div>
+<h3 id="32-思路分析"><a class="header" href="#32-思路分析">3.2 思路分析</a></h3>
+<p>我们只有一个值不知道，就是当前（最后时刻）第 0 号位的人数。
+通过观察题目不难得出，三个操作都是线性操作，而且我们准确地知道每一步的操作，也就是说，只要知道知道了最后一个时刻的第 0 号位的人数，我们就可以严丝合缝地将结果递推到第一步。并且，在此时，第一步的总和应当严格等于<code>totalNum</code>。</p>
+<p>既然如此，我们不妨设一个变量 x，作为最后时刻第 0 号位的人数。逆推来完成最终的推理，推理到第一步之后，每一个场馆的人数都应该是一个关于变量 x 的一次函数，我们将其求和之后仍然是一个一次函数，这个一次函数最终等于 <code>totalNum</code> ，代入就可以求得 x，代入每个场馆的表达式中即可获得每个场馆在第一步时的人数。</p>
+<p>在具体代码中，设置两个数组 <code>x_param</code> 和 <code>c_param</code> ，分别代表指定场馆一次函数中的 x 系数项和常数项。最终递推回第一步，求得 <code>x_param_sum</code> 与 <code>c_param_sum</code> 。求解 x 的方程为:</p>
+<p><span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1.104002em;vertical-align:-0.29971000000000003em;"></span><span class="mop"><span class="mop op-symbol small-op" style="position:relative;top:-0.0000050000000000050004em;">∑</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.804292em;"><span style="top:-2.40029em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">i</span><span class="mrel mtight">=</span><span class="mord mtight">1</span></span></span></span><span style="top:-3.2029em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">n</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.29971000000000003em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord"><span class="mord mathnormal">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.15139200000000003em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">p</span><span class="mord mathnormal mtight">a</span><span class="mord mathnormal mtight" style="margin-right:0.02778em;">r</span><span class="mord mathnormal mtight">am</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span><span class="mopen">[</span><span class="mord mathnormal">i</span><span class="mclose">]</span></span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">∗</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.66666em;vertical-align:-0.08333em;"></span><span class="mord mathnormal">x</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1.104002em;vertical-align:-0.29971000000000003em;"></span><span class="mop"><span class="mop op-symbol small-op" style="position:relative;top:-0.0000050000000000050004em;">∑</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.804292em;"><span style="top:-2.40029em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">i</span><span class="mrel mtight">=</span><span class="mord mtight">1</span></span></span></span><span style="top:-3.2029em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">n</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.29971000000000003em;"><span></span></span></span></span></span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord"><span class="mord"><span class="mord mathnormal">c</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.15139200000000003em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">p</span><span class="mord mathnormal mtight">a</span><span class="mord mathnormal mtight" style="margin-right:0.02778em;">r</span><span class="mord mathnormal mtight">am</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.286108em;"><span></span></span></span></span></span></span><span class="mopen">[</span><span class="mord mathnormal">i</span><span class="mclose">]</span></span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.69444em;vertical-align:0em;"></span><span class="mord mathnormal">t</span><span class="mord mathnormal">o</span><span class="mord mathnormal">t</span><span class="mord mathnormal">a</span><span class="mord mathnormal" style="margin-right:0.10903em;">lN</span><span class="mord mathnormal">u</span><span class="mord mathnormal">m</span></span></span></span><br />
+简单变换后得到:</p>
+<p><span class="katex"><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathnormal">x</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1.6300139999999999em;vertical-align:-0.5700069999999999em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:1.060007em;"><span style="top:-2.6550000000000002em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mop mtight"><span class="mop op-symbol small-op mtight" style="position:relative;top:-0.0000050000000000050004em;">∑</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.7046857142857144em;"><span style="top:-2.1785614285714283em;margin-left:0em;margin-right:0.07142857142857144em;"><span class="pstrut" style="height:2.5em;"></span><span class="sizing reset-size3 size1 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">i</span><span class="mrel mtight">=</span><span class="mord mtight">1</span></span></span></span><span style="top:-2.8971428571428572em;margin-right:0.07142857142857144em;"><span class="pstrut" style="height:2.5em;"></span><span class="sizing reset-size3 size1 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">n</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.32143857142857146em;"><span></span></span></span></span></span></span><span class="mspace mtight" style="margin-right:0.19516666666666668em;"></span><span class="mord mtight"><span class="mord mtight"><span class="mord mathnormal mtight">x</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.16454285714285716em;"><span style="top:-2.357em;margin-left:0em;margin-right:0.07142857142857144em;"><span class="pstrut" style="height:2.5em;"></span><span class="sizing reset-size3 size1 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">p</span><span class="mord mathnormal mtight">a</span><span class="mord mathnormal mtight" style="margin-right:0.02778em;">r</span><span class="mord mathnormal mtight">am</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2818857142857143em;"><span></span></span></span></span></span></span><span class="mopen mtight">[</span><span class="mord mathnormal mtight">i</span><span class="mclose mtight">]</span></span></span></span></span><span style="top:-3.23em;"><span class="pstrut" style="height:3em;"></span><span class="frac-line" style="border-bottom-width:0.04em;"></span></span><span style="top:-3.5350070000000002em;"><span class="pstrut" style="height:3em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight"><span class="mopen mtight">(</span><span class="mord mathnormal mtight">t</span><span class="mord mathnormal mtight">o</span><span class="mord mathnormal mtight">t</span><span class="mord mathnormal mtight">a</span><span class="mord mathnormal mtight" style="margin-right:0.10903em;">lN</span><span class="mord mathnormal mtight">u</span><span class="mord mathnormal mtight">m</span><span class="mbin mtight">−</span><span class="mop mtight"><span class="mop op-symbol small-op mtight" style="position:relative;top:-0.0000050000000000050004em;">∑</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.7385428571428572em;"><span style="top:-2.1785614285714283em;margin-left:0em;margin-right:0.07142857142857144em;"><span class="pstrut" style="height:2.5em;"></span><span class="sizing reset-size3 size1 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">i</span><span class="mrel mtight">=</span><span class="mord mtight">1</span></span></span></span><span style="top:-2.931em;margin-right:0.07142857142857144em;"><span class="pstrut" style="height:2.5em;"></span><span class="sizing reset-size3 size1 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">n</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.32143857142857146em;"><span></span></span></span></span></span></span><span class="mspace mtight" style="margin-right:0.19516666666666668em;"></span><span class="mord mtight"><span class="mord mtight"><span class="mord mathnormal mtight">c</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.16454285714285716em;"><span style="top:-2.357em;margin-left:0em;margin-right:0.07142857142857144em;"><span class="pstrut" style="height:2.5em;"></span><span class="sizing reset-size3 size1 mtight"><span class="mord mtight"><span class="mord mathnormal mtight">p</span><span class="mord mathnormal mtight">a</span><span class="mord mathnormal mtight" style="margin-right:0.02778em;">r</span><span class="mord mathnormal mtight">am</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.2818857142857143em;"><span></span></span></span></span></span></span><span class="mopen mtight">[</span><span class="mord mathnormal mtight">i</span><span class="mclose mtight">]</span></span><span class="mclose mtight">)</span></span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.5700069999999999em;"><span></span></span></span></span></span><span class="mclose nulldelimiter"></span></span></span></span></span></p>
+<p>最后代入到表达式中即可完成计算。</p>
+<h3 id="33-c代码"><a class="header" href="#33-c代码">3.3 C++代码</a></h3>
+<pre><code class="language-cpp">using VI = vector&lt;int&gt;;
+using VVI = vector&lt;VI&gt;;
+using ll = long long;
+class Solution {
+public:
+    VI volunteerDeployment(VI&amp; finalCnt, ll totalNum, VVI&amp; edges, VVI&amp; plans) {
+        VI m[50005];
+        int n = finalCnt.size() + 1;
+        // x系数和常数
+        int x_param[50005] = {}, c_param[50005] = {};
+        for (auto &amp; edge : edges) {
+            m[edge[0]].push_back(edge[1]);
+            m[edge[1]].push_back(edge[0]);
+        }
+        x_param[0] = 1;
+        for (int i = 0; i &lt; n - 1; ++i)
+            c_param[i + 1] = finalCnt[i];
+        while (plans.size()) {
+            int kind = plans.back()[0];
+            int place = plans.back()[1];
+            plans.pop_back();
+            if (kind == 1) {
+                x_param[place] *= 2;
+                c_param[place] *= 2;
+            } else if (kind == 2) {
+                for (auto &amp; nxt : m[place]) {
+                    x_param[nxt] -= x_param[place];
+                    c_param[nxt] -= c_param[place];
+                }
+            } else {
+                for (auto &amp; nxt : m[place]) {
+                    x_param[nxt] += x_param[place];
+                    c_param[nxt] += c_param[place];
+                }
+            }
+        }
+        ll x_param_sum = 0, c_param_sum = 0;
+        for (int i = 0; i &lt; n; ++i) {
+            x_param_sum += x_param[i];
+            c_param_sum += c_param[i];
+        }
+        // 方程: x_param_sum * x + c_param_sum = totalNum
+        int x = (totalNum - c_param_sum) / x_param_sum;
+        vector&lt;int&gt; res(n);
+        for (int i = 0; i &lt; n; ++i)
+            res[i] = x_param[i] * x + c_param[i];
+        return res;
+    }
+};
+</code></pre>
+<h2 id="a-hrefhttpsleetcode-cncomproblemsops9bm第四题-入场安检a"><a class="header" href="#a-hrefhttpsleetcode-cncomproblemsops9bm第四题-入场安检a"><a href="https://leetcode-cn.com/problems/oPs9Bm/">第四题 入场安检</a></a></h2>
+<h3 id="41-题目"><a class="header" href="#41-题目">4.1 题目</a></h3>
+<div class="css-330z23" style="padding: 0px; margin: 13px 0px;"><p>「力扣挑战赛」 的入场仪式马上就要开始了，由于安保工作的需要，设置了可容纳人数总和为 <code>M</code> 的 <code>N</code> 个安检室，<code>capacities[i]</code> 记录第 <code>i</code> 个安检室可容纳人数。安检室拥有两种类型：</p>
+<ul>
+<li>先进先出：在安检室中的所有观众中，最早进入安检室的观众最先离开</li>
+<li>后进先出：在安检室中的所有观众中，最晚进入安检室的观众最先离开</li>
+</ul>
+<p align="center"><img src="https://pic.leetcode-cn.com/1628843202-cdFPSt-c24754f1a5ff56989340ba5004dc5eda.gif" alt="c24754f1a5ff56989340ba5004dc5eda.gif"></p>
+<p>恰好 <code>M+1</code> 位入场的观众（编号从 0 开始）需要排队<strong>依次</strong>入场安检， 入场安检的规则如下：</p>
+<ul>
+<li>观众需要先进入编号 <code>0</code> 的安检室</li>
+<li>当观众将进入编号 <code>i</code> 的安检室时（<code>0 &lt;= i &lt; N</code>)，
+<ul>
+<li>若安检室未到达可容纳人数上限，该观众可直接进入；</li>
+<li>若安检室已到达可容纳人数上限，在该观众进入安检室之前需根据当前安检室类型选择一位观众离开后才能进入；</li>
+</ul>
+</li>
+<li>当观众离开编号 <code>i</code> 的安检室时 （<code>0 &lt;= i &lt; N-1</code>)，将进入编号 <code>i+1</code> 的安检室接受安检。</li>
+</ul>
+<p>若可以任意设定每个安检室的类型，请问有多少种设定安检室类型的方案可以使得编号 <code>k</code> 的观众第一个通过最后一个安检室入场。</p>
+<p><strong>注意：</strong></p>
+<ul>
+<li>观众不可主动离开安检室，只有当安检室容纳人数达到上限，且又有新观众需要进入时，才可根据安检室的类型选择一位观众离开；</li>
+<li>由于方案数可能过大，请将答案对 <code>1000000007</code> 取模后返回。</li>
+</ul>
+<p><strong>示例 1：</strong></p>
+<blockquote>
+<p>输入：<code>capacities = [2,2,3], k = 2</code></p>
+<p>输出：<code>2</code><br>
+解释：<br>
+存在两种设定的 <code>2</code> 种方案：</p>
+<ul>
+<li>方案 1：将编号为 <code>0</code> 、<code>1</code> 的实验室设置为 <strong>后进先出</strong> 的类型，编号为 <code>2</code> 的实验室设置为 <strong>先进先出</strong> 的类型；</li>
+<li>方案 2：将编号为 <code>0</code> 、<code>1</code> 的实验室设置为 <strong>先进先出</strong> 的类型，编号为 <code>2</code> 的实验室设置为 <strong>后进先出</strong> 的类型。</li>
+</ul>
+<p>以下是方案 1 的示意图：<br>
+<img src="https://pic.leetcode-cn.com/1628841618-bFKsnt-c60e38199a225ad62f13b954872edf9b.gif" alt="c60e38199a225ad62f13b954872edf9b.gif"></p>
+</blockquote>
+<p><strong>示例 2：</strong></p>
+<blockquote>
+<p>输入：<code>capacities = [3,3], k = 3</code></p>
+<p>输出：<code>0</code></p>
+</blockquote>
+<p><strong>示例 3：</strong></p>
+<blockquote>
+<p>输入：<code>capacities = [4,3,2,2], k = 6</code></p>
+<p>输出：<code>2</code></p>
+</blockquote>
+<p><strong>提示:</strong></p>
+<ul>
+<li><code>1 &lt;= capacities.length &lt;= 200</code></li>
+<li><code>1 &lt;= capacities[i] &lt;= 200</code></li>
+<li><code>0 &lt;= k &lt;= sum(capacities)</code></li>
+</ul>
+</div>
+<h3 id="42-思路分析"><a class="header" href="#42-思路分析">4.2 思路分析</a></h3>
+<p>本题注意观察题目即可发现，先进先出对应的数据结构为队列，后进先出对应的数据结构为栈。
+而注意看第二个gif，我们发现，当一个容器（实验室，我们在此统称为容器）为队列时，第一个进入的第一个出队列，也就是说，一个队列对于改变流程中的第一个人没任何影响。对比着来看栈，我们发现，一个长度为2的栈必须先填充1个元素，这一个元素就相当于固定在此处，没法移动，也就是说，对于流程中的第一个人，一个长度为<code>c</code>的栈能够拦截<code>c-1</code>个人。</p>
+<p>那么就很简单了。因为我们想要让第<code>k</code>个人达到对首，我们必须使用栈来拦截前<code>k</code>个人。</p>
+<p>所以我们把这道题翻译成一个我们喜闻乐见的形式：</p>
+<pre><code class="language-markdown">有`N`个硬币，每个的金额都在`cap`数组中给出（需要一个减1操作）。我们从前往后选，求最终金额为`k`的方案数。
+</code></pre>
+<p>是不是一下就简单了呢！</p>
+<p>最终的做法就是一个非常简单的dp。因为一个硬币只能用一次，所以要控制dp的方向。</p>
+<h3 id="43-c代码"><a class="header" href="#43-c代码">4.3 C++代码</a></h3>
+<pre><code class="language-cpp">const int md = 1000000007;
+class Solution {
+public:
+    int securityCheck(vector&lt;int&gt;&amp; cap, int k) {
+        for (auto &amp; c : cap) c--;
+        int sum = accumulate(cap.begin(), cap.end(), 0);
+        if (sum &lt; k) return 0;
+        int dp[40005] = {1};
+        for (auto &amp; c : cap) {
+            for (int i = k - c; i &gt;= 0; --i) {
+                (dp[i + c] += dp[i]) %= md;
+            }
+        }
+        return dp[k];
+    }
+};
+</code></pre>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../special/SUMMAR.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                            <a rel="next" href="../2021/SUMMARY.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../special/SUMMAR.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                    <a rel="next" href="../2021/SUMMARY.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        <script src="../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../searcher.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+    </body>
+</html>

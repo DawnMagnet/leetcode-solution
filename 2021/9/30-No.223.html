@@ -1,0 +1,265 @@
+<!DOCTYPE HTML>
+<html lang="zh-cn" class="sidebar-visible no-js rust">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>30日 -  矩形面积 - LeetCode Solution - 力扣题解</title>
+        <!-- Custom HTML head -->
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff" />
+
+        <link rel="icon" href="../../favicon.svg">
+        <link rel="shortcut icon" href="../../favicon.png">
+        <link rel="stylesheet" href="../../css/variables.css">
+        <link rel="stylesheet" href="../../css/general.css">
+        <link rel="stylesheet" href="../../css/chrome.css">
+        <link rel="stylesheet" href="../../css/print.css" media="print">
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../../fonts/fonts.css">
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../../highlight.css">
+        <link rel="stylesheet" href="../../tomorrow-night.css">
+        <link rel="stylesheet" href="../../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <!-- MathJax -->
+        <script async type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    </head>
+    <body>
+<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?68e5a42781c7cf226eb26bac2cf1a765";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+        <!-- Provide site root to javascript -->
+        <script type="text/javascript">
+            var path_to_root = "../../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "rust";
+        </script>
+
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script type="text/javascript">
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script type="text/javascript">
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            var html = document.querySelector('html');
+            html.classList.remove('no-js')
+            html.classList.remove('rust')
+            html.classList.add(theme);
+            html.classList.add('js');
+        </script>
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script type="text/javascript">
+            var html = document.querySelector('html');
+            var sidebar = 'hidden';
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            }
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <div class="sidebar-scrollbox">
+                <ol class="chapter"><li class="chapter-item expanded affix "><a href="../../written_at_front.html">引言</a></li><li class="chapter-item expanded affix "><a href="../../leanote.html">关于从蚂蚁笔记迁移而来的说明</a></li><li class="chapter-item expanded "><a href="../../special/SUMMAR.html"><strong aria-hidden="true">1.</strong> 特辑</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../special/leetcode-cup-2021-autumn-group.html"><strong aria-hidden="true">1.1.</strong> 2021力扣杯秋季编程大赛-战队赛复盘</a></li></ol></li><li class="chapter-item expanded "><a href="../../2021/SUMMARY.html"><strong aria-hidden="true">2.</strong> 2021年</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../2021/10/SUMMARY.html"><strong aria-hidden="true">2.1.</strong> 10月</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../2021/10/7-No.434.html"><strong aria-hidden="true">2.1.1.</strong> 7日 -  字符串中的单词数</a></li><li class="chapter-item expanded "><a href="../../2021/10/6-No.414.html"><strong aria-hidden="true">2.1.2.</strong> 6日 -  第三大的数</a></li><li class="chapter-item expanded "><a href="../../2021/10/5-No.284.html"><strong aria-hidden="true">2.1.3.</strong> 5日 -  窥探迭代器</a></li><li class="chapter-item expanded "><a href="../../2021/10/4-No.482.html"><strong aria-hidden="true">2.1.4.</strong> 4日 -  密钥格式化</a></li><li class="chapter-item expanded "><a href="../../2021/10/3-No.166.html"><strong aria-hidden="true">2.1.5.</strong> 3日 -  分数到小数</a></li><li class="chapter-item expanded "><a href="../../2021/10/2-No.405.html"><strong aria-hidden="true">2.1.6.</strong> 2日 -  数字转换为十六进制数</a></li><li class="chapter-item expanded "><a href="../../2021/10/1-No.1436.html"><strong aria-hidden="true">2.1.7.</strong> 1日 -  旅行终点站</a></li></ol></li><li class="chapter-item expanded "><a href="../../2021/9/SUMMARY.html"><strong aria-hidden="true">2.2.</strong> 9月</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../2021/9/30-No.223.html" class="active"><strong aria-hidden="true">2.2.1.</strong> 30日 -  矩形面积</a></li><li class="chapter-item expanded "><a href="../../2021/9/29-No.517.html"><strong aria-hidden="true">2.2.2.</strong> 29日 -  超级洗衣机</a></li><li class="chapter-item expanded "><a href="../../2021/9/28-No.437.html"><strong aria-hidden="true">2.2.3.</strong> 28日 -  路径总和 III</a></li><li class="chapter-item expanded "><a href="../../2021/9/27-No.639.html"><strong aria-hidden="true">2.2.4.</strong> 27日 -  解码方法 II</a></li><li class="chapter-item expanded "><a href="../../2021/9/26-No.371.html"><strong aria-hidden="true">2.2.5.</strong> 26日 -  两整数之和</a></li><li class="chapter-item expanded "><a href="../../2021/9/25-No.583.html"><strong aria-hidden="true">2.2.6.</strong> 25日 -  两个字符串的删除操作</a></li><li class="chapter-item expanded "><a href="../../2021/9/24-No.430.html"><strong aria-hidden="true">2.2.7.</strong> 24日 -  扁平化多级双向链表</a></li><li class="chapter-item expanded "><a href="../../2021/9/23-No.326.html"><strong aria-hidden="true">2.2.8.</strong> 23日 -  3的幂</a></li><li class="chapter-item expanded "><a href="../../2021/9/22-No.725.html"><strong aria-hidden="true">2.2.9.</strong> 22日 -  分隔链表</a></li></ol></li><li class="chapter-item expanded "><a href="../../2021/8/SUMMARY.html"><strong aria-hidden="true">2.3.</strong> 8月</a></li><li><ol class="section"><li class="chapter-item expanded "><a href="../../2021/8/14-No.1853.html"><strong aria-hidden="true">2.3.1.</strong> 14日 -  统计不开心的朋友</a></li><li class="chapter-item expanded "><a href="../../2021/8/13-No.233.html"><strong aria-hidden="true">2.3.2.</strong> 13日 -  数字1的个数</a></li><li class="chapter-item expanded "><a href="../../2021/8/12-No.516.html"><strong aria-hidden="true">2.3.3.</strong> 12日 -  最长回文子序列</a></li><li class="chapter-item expanded "><a href="../../2021/8/11-No.446.html"><strong aria-hidden="true">2.3.4.</strong> 11日 -  等差数列划分 II - 子序列</a></li><li class="chapter-item expanded "><a href="../../2021/8/10-No.413.html"><strong aria-hidden="true">2.3.5.</strong> 10日 -  等差数列划分</a></li><li class="chapter-item expanded "><a href="../../2021/8/9-No.313.html"><strong aria-hidden="true">2.3.6.</strong> 9日 -  超级丑数</a></li><li class="chapter-item expanded "><a href="../../2021/8/8-No.1137.html"><strong aria-hidden="true">2.3.7.</strong> 8日 -  第N个泰波那契数</a></li></ol></li></ol></li></ol>
+            </div>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle"></div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky bordered">
+                    <div class="left-buttons">
+                        <button id="sidebar-toggle" class="icon-button" type="button" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </button>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust (default)</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">LeetCode Solution - 力扣题解</h1>
+
+                    <div class="right-buttons">
+                        <a href="../../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        <a href="https://github.com/DawnMagnet/leetcode-solution.git" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script type="text/javascript">
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css" integrity="sha384-AfEj0r4/OFrOo5t7NnNe46zW/tFgW6x/bCJG8FqQCEo3+Aro6EYUG4+cU+KJWu/X" crossorigin="anonymous">
+<h1 id="no223-矩形面积"><a class="header" href="#no223-矩形面积">No.223 矩形面积</a></h1>
+<p>给你 <strong>二维</strong> 平面上两个 <strong>由直线构成的</strong> 矩形，请你计算并返回两个矩形覆盖的总面积。</p>
+<p>每个矩形由其 <strong>左下</strong> 顶点和 <strong>右上</strong> 顶点坐标表示：</p>
+<div class="MachineTrans-Lines">
+<ul>
+	<li class="MachineTrans-lang-zh-CN">第一个矩形由其左下顶点 <code>(ax1, ay1)</code> 和右上顶点 <code>(ax2, ay2)</code> 定义。</li>
+	<li class="MachineTrans-lang-zh-CN">第二个矩形由其左下顶点 <code>(bx1, by1)</code> 和右上顶点 <code>(bx2, by2)</code> 定义。</li>
+</ul>
+</div>
+<p>&nbsp;</p>
+<p><strong>示例 1：</strong></p>
+<img style="width: 700px; height: 365px;" src="https://assets.leetcode.com/uploads/2021/05/08/rectangle-plane.png" alt="Rectangle Area">
+<pre><strong>输入：</strong>ax1 = -3, ay1 = 0, ax2 = 3, ay2 = 4, bx1 = 0, by1 = -1, bx2 = 9, by2 = 2
+<strong>输出：</strong>45
+</pre>
+<p><strong>示例 2：</strong></p>
+<pre><strong>输入：</strong>ax1 = -2, ay1 = -2, ax2 = 2, ay2 = 2, bx1 = -2, by1 = -2, bx2 = 2, by2 = 2
+<strong>输出：</strong>16
+</pre>
+<p>&nbsp;</p>
+<p><strong>提示：</strong></p>
+<ul>
+	<li><code>-10<sup>4</sup> &lt;= ax1, ay1, ax2, ay2, bx1, by1, bx2, by2 &lt;= 10<sup>4</sup></code></li>
+</ul>
+<hr />
+<h1 id="思路分析"><a class="header" href="#思路分析">思路分析</a></h1>
+<p>首先可以想想，两个长方形重叠有哪些情况，有如上图这样，也有这样：</p>
+<p><img src="https://img-blog.csdnimg.cn/1b8334a2206c443aa156f9d53637ea3e.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBA55-t6IW_Q2F0,size_20,color_FFFFFF,t_70,g_se,x_16" alt="msg" /></p>
+<p>也有如下这样：<br />
+<img src="https://img-blog.csdnimg.cn/ac7193b3081f4082a2e83f86184d473a.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBA55-t6IW_Q2F0,size_20,color_FFFFFF,t_70,g_se,x_16" alt="msg2" /></p>
+<p>也有可能长这样：<br />
+<img src="https://img-blog.csdnimg.cn/18e4009dfa5744448495a7c6ae34fba1.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBA55-t6IW_Q2F0,size_17,color_FFFFFF,t_70,g_se,x_16" alt="msg3" /></p>
+<p>但其实不管他到底长什么样，我们都可以通过两正方形面积之和减去重合部分得出答案，设两长方形分别为 A 和 B，则：<br />
+<img src="https://img-blog.csdnimg.cn/10f1131f3f974fc2a05a5db0ffb069f3.png" alt="公式" /></p>
+<p>A 和 B 的面积很好求，这里就不再赘述，这里主要说说重合的面积如何求；
+重合部分仔细考虑，他也是一个长方形，也有长和高，所以求出长和高是关键：
+长为 x 轴方向某两个端点之差，高则是 y 轴方向某两个端点之差，那这两个点是哪两个呢？</p>
+<p>是这两个点（这种情况是红色部分点减去绿色部分点，为正数）：<br />
+<img src="https://img-blog.csdnimg.cn/7fc1096eb8594b4f95f51d33caf27a5f.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBA55-t6IW_Q2F0,size_14,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述" /></p>
+<p>是这两个点（这种情况是绿色点减去黄色点，为负数）：<br />
+<img src="https://img-blog.csdnimg.cn/a094c0abf4ed4680b90aed34ba6012ee.png?x-oss-process=image/watermark,type_ZHJvaWRzYW5zZmFsbGJhY2s,shadow_50,text_Q1NETiBA55-t6IW_Q2F0,size_19,color_FFFFFF,t_70,g_se,x_16" alt="在这里插入图片描述" /></p>
+<p>由此可见：两点分别为：<strong>两个长方形的最右边的 x 的最小值</strong> &amp; <strong>两个长方形最左边的 x 的最大值</strong></p>
+<p>高度方向也类似，就不过于赘述。</p>
+<p>若长或者高任一为负数 or0，则将其置为 0.得出的重合面积也为 0：</p>
+<h1 id="java-代码"><a class="header" href="#java-代码">Java 代码</a></h1>
+<pre><code class="language-java">class Solution {
+    public int computeArea(int ax1, int ay1, int ax2, int ay2, int bx1, int by1, int bx2, int by2) {
+        int A = (ax1 - ax2) * (ay1 - ay2);
+        int B = (bx1 - bx2) * (by1 - by2);
+        int C_X = Math.max(0, Math.min(ax2 ,bx2) - Math.max(ax1, bx1));
+        int C_Y = Math.max(0, Math.min(ay2 ,by2) - Math.max(ay1, by1));
+        int C = C_X * C_Y;
+        return A + B - C;
+    }
+}
+</code></pre>
+<h1 id="rust-代码"><a class="header" href="#rust-代码">Rust 代码</a></h1>
+<pre><pre class="playground"><code class="language-rust">
+<span class="boring">#![allow(unused)]
+</span><span class="boring">fn main() {
+</span><span class="boring">struct Solution;
+</span>pub fn compute(a: i32, b: i32, c: i32, d: i32) -&gt; i32 {
+    let t = c.max(a);
+    (b - t).min(d - t).max(0)
+}
+impl Solution {
+    pub fn compute_area(a: i32, b: i32, c: i32, d: i32, e: i32, f: i32, g: i32, h: i32) -&gt; i32 {
+        // 重叠面积
+        let cd = compute(a, c, e, g) * compute(b, d, f, h);
+        (c-a)*(d-b) + (h-f)*(g-e) - cd
+    }
+}
+<span class="boring">}
+</span></code></pre></pre>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../../2021/9/SUMMARY.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+                            <a rel="next" href="../../2021/9/29-No.517.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../../2021/9/SUMMARY.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+                    <a rel="next" href="../../2021/9/29-No.517.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+        <script type="text/javascript">
+            window.playground_copyable = true;
+        </script>
+        <script src="../../elasticlunr.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../mark.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../searcher.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../clipboard.min.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../highlight.js" type="text/javascript" charset="utf-8"></script>
+        <script src="../../book.js" type="text/javascript" charset="utf-8"></script>
+
+        <!-- Custom JS scripts -->
+    </body>
+</html>
